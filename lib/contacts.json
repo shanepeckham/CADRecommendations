@@ -2,16 +2,20 @@
 	{
 		"id":1,
 		"name":"Barney Poland",
-		"email":"barney@contoso.com"
+		"email":"barney@contoso.com",
+		"caseNum": 4
 	},
 	{
 		"id":2,
 		"name":"Lacy Barrera",
-		"email":"lacy@contoso.com"
+		"email":"lacy@contoso.com",
+		"caseNum": 5
+
 	},
 	{
 		"id":3,
 		"name":"Lora Riggs",
-		"email":"lora@contoso.com"
+		"email":"lora@contoso.com",
+		"caseNum": 6
 	}
 ]

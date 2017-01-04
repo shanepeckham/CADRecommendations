@@ -72,7 +72,10 @@
 				"responses": {
 					"200": {
 						"description": "OK",
+						"schema": {
 							"type": "string"
+
+						}
 					}
 				},
 				"deprecated": false

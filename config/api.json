@@ -45,7 +45,7 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"type": "array",
+							"type": "string",
 							"items": {
 								"$ref": "#/definitions/Contact"
 							}

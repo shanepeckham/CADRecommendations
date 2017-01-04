@@ -72,10 +72,8 @@
 				"responses": {
 					"200": {
 						"description": "OK",
-						"schema": {
 							"type": "string",
 							"name": "caseNum"
-						}
 					}
 				},
 				"deprecated": false

@@ -80,6 +80,32 @@
 				},
 				"deprecated": false
 			}
+		},
+		"/contacts/{id}/email": {
+			"get": {
+				"tags": ["ContactsEmail"],
+				"operationId": "contacts_getEmailByContactId",
+				"consumes": [],
+				"produces": ["application/json",
+					"text/json"],
+				"parameters": [{
+					"name": "id",
+					"in": "path",
+					"required": true,
+					"type": "integer",
+					"format": "int32"
+				}],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "string"
+
+						}
+					}
+				},
+				"deprecated": false
+			}
 		}
 	},
 	"definitions": {

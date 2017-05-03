@@ -2,14 +2,14 @@
 	"swagger": "2.0",
 	"info": {
 		"version": "v1",
-		"title": "Contact List API",
-    	"description": "A Contact list API based on Swagger and built using Node.js"
+		"title": "Recommendations List API",
+    	"description": "A Recommendations list API based on Swagger and built using Node.js"
 	},
 	"paths": {
-		"/contacts": {
+		"/recommendations": {
 			"get": {
-				"tags": ["Contacts"],
-				"operationId": "contacts_get",
+				"tags": ["Recommendations"],
+				"operationId": "recommendations_get",
 				"consumes": [],
 				"produces": ["application/json",
 				"text/json"],
@@ -19,39 +19,11 @@
 						"schema": {
 							"type": "array",
 							"items": {
-								"$ref": "#/definitions/Contact"
+								"$ref": "#/definitions/Recommendation"
 							}
 						}
 					}
 				},
-				"deprecated": false
-			}
-		},
-		"/contacts/{id}": {
-			"get": {
-				"tags": ["Contacts"],
-				"operationId": "contacts_getById",
-				"consumes": [],
-				"produces": ["application/json",
-				"text/json"],
-				"parameters": [{
-					"name": "id",
-					"in": "path",
-					"required": true,
-					"type": "integer",
-					"format": "int32"
-				}],
-			"responses": {
-						"200": {
-							"description": "successful operation",
-							"schema": {
-								"$ref": "#/definitions/Contact"
-							}
-						},
-						"400": {
-							"description": "Invalid ID supplied"
-						}
-					},
 				"deprecated": false
 			}
 		},
@@ -63,7 +35,7 @@
 				"produces": ["application/json",
 				"text/json"],
 				"parameters": [{
-					"name": "userId",
+					"name": "id",
 					"in": "path",
 					"required": true,
 					"type": "integer",
@@ -73,93 +45,63 @@
 						"200": {
 							"description": "successful operation",
 							"schema": {
-								"$ref": "#/definitions/Recommendations"
+								"$ref": "#/definitions/Recommendation"
 							}
 						},
 						"400": {
-							"description": "Invalid userId supplied"
+							"description": "Invalid ID supplied"
 						}
 					},
-				"deprecated": false
-			}
-		},
-		"/contacts/{id}/case": {
-			"get": {
-				"tags": ["ContactsCase"],
-				"operationId": "contacts_getCaseByContactId",
-				"consumes": [],
-				"produces": ["application/json",
-					"text/json"],
-				"parameters": [{
-					"name": "id",
-					"in": "path",
-					"required": true,
-					"type": "integer",
-					"format": "int32"
-				}],
-				"responses": {
-					"200": {
-						"description": "OK",
-						"schema": {
-							"type": "string"
-
-						}
-					}
-				},
-				"deprecated": false
-			}
-		},
-		"/contacts/{id}/email": {
-			"get": {
-				"tags": ["ContactsEmail"],
-				"operationId": "contacts_getEmailByContactId",
-				"consumes": [],
-				"produces": ["application/json",
-					"text/json"],
-				"parameters": [{
-					"name": "id",
-					"in": "path",
-					"required": true,
-					"type": "integer",
-					"format": "int32"
-				}],
-				"responses": {
-					"200": {
-						"description": "OK",
-						"schema": {
-							"type": "string"
-
-						}
-					}
-				},
 				"deprecated": false
 			}
 		}
 	},
 	"definitions": {
-		"Contact": {
+		"Recommendation": {
 			"type": "object",
 			"properties": {
-				"id": {
-					"format": "int32",
-					"type": "integer"
+					"recommendedItems": {
+						"id": "/properties/recommendedItems",
+						"items": {
+							"id": "/properties/recommendedItems/items",
+							"properties": {
+								"items": {
+									"id": "/properties/recommendedItems/items/properties/items",
+									"items": {
+										"id": "/properties/recommendedItems/items/properties/items/items",
+										"properties": {
+											"id": {
+												"id": "/properties/recommendedItems/items/properties/items/items/properties/id",
+												"type": "string"
+											},
+											"name": {
+												"id": "/properties/recommendedItems/items/properties/items/items/properties/name",
+												"type": "string"
+											}
+										},
+										"type": "object"
+									},
+									"type": "array"
+								},
+								"rating": {
+									"id": "/properties/recommendedItems/items/properties/rating",
+									"type": "number"
+								},
+								"reasoning": {
+									"id": "/properties/recommendedItems/items/properties/reasoning",
+									"items": {
+										"id": "/properties/recommendedItems/items/properties/reasoning/items",
+										"type": "string"
+									},
+									"type": "array"
+								}
+							},
+							"type": "object"
+						},
+						"type": "array"
+					}
 				},
-				"name": {
-					"type": "string"
-				},
-				"email": {
-					"type": "string"
-				}
-			}
-		},
-		"Recommendations": {
-			"type": "object",
-			"properties": {
-				"userId": {
-					"format": "int32",
-					"type": "integer"
-				}
-			}
-		}
+				"type": "object"
+					}
 	}
 }

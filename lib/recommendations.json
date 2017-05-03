@@ -1,0 +1,42 @@
+[
+	{
+  "recommendedItems": [
+    {
+      "items": [
+        {
+          "id": "3",
+          "name": " Cappucino"
+        }
+      ],
+      "rating": 0.502396748986747,
+      "reasoning": [
+        "Default recommendation for ' Americano'"
+      ]
+    },
+    {
+      "items": [
+        {
+          "id": "1",
+          "name": " Latte"
+        }
+      ],
+      "rating": 0.502396748986745,
+      "reasoning": [
+        "Default recommendation for ' Americano'"
+      ]
+    },
+    {
+      "items": [
+        {
+          "id": "4",
+          "name": " Espresso"
+        }
+      ],
+      "rating": 0.502396748986743,
+      "reasoning": [
+        "Default recommendation for ' Americano'"
+      ]
+    }
+  ]
+}
+]

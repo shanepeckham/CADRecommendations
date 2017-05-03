@@ -5,7 +5,7 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 # Install app dependencies
-RUN git clone https://github.com/shanepeckham/CADContacts.git
+# RUN git clone https://github.com/shanepeckham/CADContacts.git
 RUN npm install
 
 # Bundle app source

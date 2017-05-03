@@ -55,6 +55,34 @@
 				"deprecated": false
 			}
 		},
+		"/recommendations/{id}": {
+			"get": {
+				"tags": ["Recommendations"],
+				"operationId": "recommendations_getById",
+				"consumes": [],
+				"produces": ["application/json",
+				"text/json"],
+				"parameters": [{
+					"name": "userId",
+					"in": "path",
+					"required": true,
+					"type": "integer",
+					"format": "int32"
+				}],
+			"responses": {
+						"200": {
+							"description": "successful operation",
+							"schema": {
+								"$ref": "#/definitions/Recommendations"
+							}
+						},
+						"400": {
+							"description": "Invalid userId supplied"
+						}
+					},
+				"deprecated": false
+			}
+		},
 		"/contacts/{id}/case": {
 			"get": {
 				"tags": ["ContactsCase"],
@@ -121,6 +149,15 @@
 				},
 				"email": {
 					"type": "string"
+				}
+			}
+		},
+		"Recommendations": {
+			"type": "object",
+			"properties": {
+				"userId": {
+					"format": "int32",
+					"type": "integer"
 				}
 			}
 		}

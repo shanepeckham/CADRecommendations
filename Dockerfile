@@ -10,7 +10,7 @@ RUN npm install
 
 # Bundle app source
 COPY . /usr/src/app
-RUN cd CADContacts
+#RUN cd CADRecommendations
 
 EXPOSE 8000
 CMD [ "npm", "start" ]
